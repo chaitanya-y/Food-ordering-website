@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Analog Clock Plugin with UI</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>AnoClock</h1>
+      <h3>By Andrew Sheffield</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row mohan-clock">
+    <div class="col-xs-12">
+      
+      <div class="time-wrap zoomIn animated">
+        <div class="time-base bounceInUp animated"></div>
+        <div class="time-belt bounceInUp animated"></div>
+        <div class="time-wheel bounceInLeft animated"></div>
+        <div class="time-clock bounceInUp animated">
+          <div class="indicators">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="letters">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="arrows">
+            <div class="hour hour-hand"></div>
+            <div class="minute minute-hand"></div>
+            <div class="second second-hand"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+    <div class="col-xs-12">
+      <h4>this clock designed by <a href="https://codepen.io/khadkamhn/" target="_blank">Mohan Khadka</a></h4>
+    </div>
+  </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 top-examples">
+      <div class="clock-container">
+        <div class="clock1"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 top-examples">
+      <div class="clock-container">
+        <div class="clock2"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 top-examples">
+      <div class="clock-container">
+        <div class="clock3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Intro to AnoClock</h2>
+      <p>AnoClock is a jQuery plug-in that allows you to simply embed anolog clocks into your project. It calculates the angles of the second, minutes and hour hands based off of the set time. AnoClock lets you customize the arm movements, adjust timezones
+        and set static clocks. It also lets you simply and quickly customize the styling to match your project. The plug-in can be used on existing clock UI's or by using the default clock UI provided.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Getting started</h2>
+      <p>To get started, AnoClock needs a container with a clock object inside.</p>
+      <h4>HTML:</h4>
+      <code>&lt;div class='clock-container'&gt;<br>
+        &nbsp;&lt;div class='clock'&gt;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+      <p>The container object needs to have a set width and height with square dimensions.</p>
+      <h4>CSS:</h4>
+      <code>.clock-container {<br>
+        &nbsp;width: 200px;<br>
+        &nbsp;height: 200px;<br>
+        }
+      </code>
+      <p>Lastly, you need to initialize the clock object with the follow command.</p>
+      <h4>JS</h4>
+      <code>$('.clock').setAsClock();</code>
+      <p>That will produce the following clock:</p>
+      <div class='clock-container'>
+        <div class='clock4'></div>
+      </div>
+      <p>There are a few simple UI settings that makes adjusting this clock quick and easy to do.</p>
+      <code>$('.clock').setAsClock({<br>
+        &nbsp;sweeping: false, //Changes the hands to a ticking<br>
+        &nbsp;numbers: true, //false will turn the numbers off<br>
+        &nbsp;numberSize: '24px', //Adjust the font size of the numbers<br>
+        &nbsp;ticks: 1, //0-2 changes the tick count<br>
+        &nbsp;backgroundColor: '#500', //can take any normal css color<br>
+        &nbsp;color: 'lightblue', //Changes the color of all the forground items<br>
+        &nbsp;borderRadius: '60px' //change how round the clock is<br>
+        });</code>
+      <p>These settings create the following clock:</p>
+      <div class='clock-container'>
+        <div class='clock5'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>All Options</h2>
+      <table class="table table-bordered text-left">
+        <tr>
+          <th>Options</th>
+          <th>Type</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>initUI</td>
+          <td>Boolean</td>
+          <td>initUI will render the DOM objects necesary to build a clock. It paints the second, minute, and hour hands. <i>Default is set to true.</i></td>
+        </tr>
+        <tr>
+          <td>styling</td>
+          <td>Boolean</td>
+          <td>Sets the default UI options and/or uses the options set to paint the clock. No further css will be required. <i>Default is set to true.</i></td>
+        </tr>
+        <tr>
+          <td>sweeping</td>
+          <td>Boolean</td>
+          <td>Sets the motion of sweep on the hands of the clock. Setting to false will cause a ticking motion. <i>Default is set to true</i></td>
+        </tr>
+        <tr>
+          <td>numbers</td>
+          <td>Boolean</td>
+          <td>Turns on and off the painting of the numbers in the UI. <i>Default is set to true.</i></td>
+        </tr>
+        <tr>
+          <td>numberSize</td>
+          <td>String</td>
+          <td>Sets the size of the numbers on the clock face. Example: '18px' or '2em'. <i>Default is set to '18px'</i></td>
+        </tr>
+        <tr>
+          <td>backgroundColor</td>
+          <td>String, Hex Color, RGB Color</td>
+          <td>Sets the color of the face of the watch. Can take any normal css color. Example: 'blue', #00f, rgb(0,0,255). <i>Default is set to 'steelblue'.</i></td>
+        </tr>
+        <tr>
+          <td>ticks</td>
+          <td>Number</td>
+          <td>Defines the density of the tick marks to be painted. Requires 0, 1 or 2. <i>Default is set to 2.</i></td>
+        </tr>
+        <tr>
+          <td>borderRadius</td>
+          <td>String</td>
+          <td>Sets the border-radius of the clock face. Requires a string of percent or pixel. Example: '100%' or '100px'. <i>Default is set to '100%'.</i></td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>String, Hex Color, RGB Color</td>
+          <td>Sets the color of the text, ticks and hands. Can take any normal css color. Example: 'blue', #00f, rgb(0,0,255). <i>Default is set to 'white'.</i></td>
+        </tr>
+        <tr>
+          <td>UTCOffset</td>
+          <td>Number</td>
+          <td>Sets the timezone of the clock based off of UTC Offset. Requires a positive or negative number. be careful as different locations will change their offset depending on the time of year. <i>Default is set to users time.</i></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 time-zone">
+      <h4>New York '-5'</h4>
+      <div class="clock-container">
+        <div class="new-york-clock"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 time-zone">
+      <h4>London '-2'</h4>
+      <div class="clock-container">
+        <div class="london-clock"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 time-zone">
+      <h4>Paris '+1'</h4>
+      <div class="clock-container">
+        <div class="paris-clock"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/64754/anoClock.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

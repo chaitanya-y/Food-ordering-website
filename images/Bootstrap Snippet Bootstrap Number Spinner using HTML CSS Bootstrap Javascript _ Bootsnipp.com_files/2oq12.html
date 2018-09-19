@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://d2d3qesrx8xj6s.cloudfront.net/iframe/2oq12 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Spinner - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap.min(1).css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    .spin{
+    height:auto;
+    width:auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+.spin span{
+    height:56px;
+    width:56px;
+    border:1px solid green;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    animation:spin 1500ms ease-in-out infinite;
+}
+.spin .one{
+    animation-delay:500ms;
+    animation:spin 2000ms ease-in-out infinite;
+}
+.spin .two{
+    animation:spin 1700ms ease-in-out infinite;
+    animation-delay:300ms;
+    border:10px solid teal;
+}
+.spin .two{
+    animation:spin 2000ms ease-in-out infinite;
+    border-color:yellow;
+}
+
+@keyframes spin{
+    0%{
+        transform:scale(0);
+        opacity:1;
+    }
+    100%{
+        transform:scale(1.5);
+        opacity:0;
+    }
+}
+@keyframes hide{
+    0%{
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        opacity:1;
+    }
+}
+    </style>
+    <script src="./jquery-1.11.1.min.js.download"></script>
+    <script src="./bootstrap.min.js(1).download"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+		<div class="spin">
+		    <span class="one"></span>
+		    <span class="two"></span>
+		    <span class="three"></span>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+	
+	</script>
+
+
+</body></html>

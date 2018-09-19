@@ -1,0 +1,309 @@
+*{  margin:0;
+  padding:0;
+}
+span:before{
+  content: 'We Do Time Management';
+  -webkit-animation: animate 15s linear infinite;
+  animation: animate infinite 15s;
+}
+@-webkit-keyframes animate{
+  25%{
+    content: 'We Do Time Management';
+  }
+  
+  50%
+  {
+    content: 'We make your life easy';
+  }
+
+  100%{
+    content: 'preOrder now with preO';
+  }
+
+}
+
+@media screen and (min-width: 1201px  ) {
+ body
+ {width:100%;
+  margin:0 ;
+  padding:0;
+  font-family:arial, 'lucida Sans Unicode';
+background:white;
+}
+
+.container-fluid{
+  width: 100%;height: 100%;
+}
+#preo_business{
+  background-color:#E0E0E0;
+  width: 100%;
+  height:23px;
+}
+#preo_business_text{
+  text-decoration: none;
+  color:#868686   ;
+  font-size: 12px;padding-right: 100px;
+}
+.navbar{
+  height: 60px;
+background-color:#060F18;
+}
+.logo2{
+  height:48px;padding-left: 100px;
+  border-radius:10px 10px;
+}
+.main_contentrow{width: 100%;height: 100%;margin-top:0px;background-color:white;}
+.download_app{width: 120px;height: 60px;}
+#nid{padding-right: 40px;}
+.clock_column{ width: 100%;background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("images/clock_bg.jpg");background-size: cover;
+ padding-top: 30px;background-position: center center;background-repeat: no-repeat;}
+.content_column{
+background: rgba(28,101,189,1);
+background: -moz-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(28,101,189,1)), color-stop(52%, rgba(28,101,189,1)), color-stop(100%, rgba(39,163,230,1)));
+background: -webkit-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -o-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -ms-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: linear-gradient(to right, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c65bd', endColorstr='#27a3e6', GradientType=1 );
+width: 100%;height: 600px;
+}
+.main_text{padding-top: 40px;font-size: 40px;font-weight: bold;color: white;}
+.searcharea_input{width: 62%;height: 60px;background-color: rgba(0,0,0,0.8);border-radius:200px;margin-top: 30px;margin-left: 18%;}
+#form_input{padding-top: 10px;}
+#input_main{background-color: transparent;border:none;color: white;outline: none;}
+#locateme_button{background-color: transparent;color: white;border: 1px solid grey; border-radius: 200px;margin-left: 5px;}
+#search_button{background-color: #FA5D03;border-radius: 50%;margin-left: 5px;}
+.text_shuffle1{font-size: 30px;color: white;font-weight: bold;}
+.text_shuffle2{font-size: 20px;color: white;font-weight: bold;padding-top:40px;}
+.canvas2{
+  display: none;
+}
+.playstore_column{padding-left: 150px;}
+.appstore_column{padding-right: 150px;}
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px; color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+.form-control::-moz-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+}
+
+@media screen and (max-width: 1200px  ) {
+  html {width: auto!important; overflow-x: hidden!important;} 
+ body
+ {width:100%;
+  margin:0 ;
+  padding:0;
+  font-family:arial, 'lucida Sans Unicode';
+  background-color:white;
+   width: auto!important; overflow-x: hidden!important
+}
+.clock_column{display: none;}
+.navbar{
+  height: 56px;
+background-color:#060F18;
+}
+.logo2{
+  height:40px;padding-left: 30px;
+  border-radius:10px 10px;
+}
+.container-fluid{
+  width: 100%;height: 100%;
+}
+#preo_business{
+  display: none;
+}
+.main_contentrow{width: 100%;height: 100%;background: rgba(28,101,189,1);
+background: -moz-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(28,101,189,1)), color-stop(52%, rgba(28,101,189,1)), color-stop(100%, rgba(39,163,230,1)));
+background: -webkit-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -o-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -ms-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: linear-gradient(to right, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c65bd', endColorstr='#27a3e6', GradientType=1 );
+padding: 0;margin: 0;
+}
+
+#nid{padding-right: 40px;}
+.clock_column{display: none;}
+.content_column_backgroundimg{
+  background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("images/clock_bg.jpg");background-size: cover;
+  background-position: center;background-repeat: no-repeat;padding: 10px;
+}
+.content_column{
+width: 100%;height: 100%;
+}
+.main_text{padding: 20px;font-size: 40px;font-weight: bold;color: white;}
+.searcharea_section{padding: 20px;}
+.searcharea_input{width: 62%;height: 60px;background-color: rgba(0,0,0,0.7);border-radius:200px;margin-left: 18%;}
+#form_input{padding-top: 10px;}
+#input_main{background-color: transparent;border:none;color: white;outline: none;}
+#locateme_button{background-color: transparent;color: white;border: 1px solid grey; border-radius: 200px;margin-left: 5px;}
+#search_button{background-color: #FA5D03;border-radius: 50%;margin-left: 5px;}
+.text_shuffle1{font-size: 30px;color: white;font-weight: bold;padding-top:30px;}
+.text_shuffle2{font-size: 20px;color: white;font-weight: bold;padding-top:40px;}
+.playstore_column{width: 100%;padding-left: 200px;}
+.appstore_column{width: 100%;padding-right: 200px;}
+.download_app{width: 120px;height: 60px;}
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px; color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+.form-control::-moz-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+
+}
+
+
+ @media screen and (max-width: 768px  ) {
+body
+ {width:100%;
+  margin:0 ;
+  padding:0;
+  font-family:arial, 'lucida Sans Unicode';
+  background-color:white;
+    user-select: none;
+}
+.clock_column{display: none;}
+.navbar{
+  height: 56px;
+background-color:#060F18;
+}
+.logo2{
+  height:48px;padding-left: 30px;
+  border-radius:10px 10px;
+}
+.container-fluid{
+  width: 100%;height: 100%;
+}
+#preo_business{
+  display: none;
+}
+.main_contentrow{width: 100%;height: 100%;margin-top:0px;background-color:white;}
+.download_app{width: 120px;height: 60px;}
+#nid{padding-right: 40px;}
+
+.content_column{
+background: rgba(28,101,189,1);
+background: -moz-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(28,101,189,1)), color-stop(52%, rgba(28,101,189,1)), color-stop(100%, rgba(39,163,230,1)));
+background: -webkit-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -o-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -ms-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: linear-gradient(to right, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c65bd', endColorstr='#27a3e6', GradientType=1 );
+width: 100%;
+}
+.main_text{padding-top: 40px;font-size: 40px;font-weight: bold;color: white;}
+.searcharea_section{padding: 20px;}
+.searcharea_input{width: 80%;height: 60px;background-color: rgba(0,0,0,0.8);border-radius:200px;margin-left:10%;}
+#form_input{padding-top: 10px;}
+#input_main{background-color: transparent;border:none;color: white;outline: none;}
+#locateme_button{background-color: transparent;color: white;border: 1px solid grey; border-radius: 200px;margin-left: 5px;}
+#search_button{background-color: #FA5D03;border-radius: 50%;margin-left: 5px;}
+.text_shuffle2{font-size: 20px;color: white;font-weight: bold;padding-top:40px;}
+.playstore_column{width: 100%;padding-left: 100px;}
+.appstore_column{width: 100%;padding-right: 100px;}
+
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px; color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+.form-control::-moz-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 15px;color: white;
+}
+
+}
+
+ @media screen and (max-width: 576px  ) {
+body
+ {width:100%;height: 100%;
+  margin:0 ;
+  padding:0;
+  font-family:arial, 'lucida Sans Unicode';
+  background-color:white;
+    user-select: none;
+}
+.clock_column{display: none;}
+.navbar{
+  height: 56px;margin: 0;padding: 0;width: 100%;height: 100%;
+background-color:#060F18;
+}
+.logo2{
+  height:48px;padding-left: 10px;
+  border-radius:10px 10px;
+}
+.container-fluid{
+  width: 100%;height: 100%;margin: 0;padding: 0;
+}
+#preo_business{
+  display: none;
+}
+.main_contentrow{width: 100%;height: 100%;margin:0px;padding: 0;background-color:white;}
+.download_app{width: 120px;height: 60px;padding: 0;margin: 0;}
+#nid{padding-right: 10px;}
+.content_column{
+background: rgba(28,101,189,1);
+background: -moz-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(28,101,189,1)), color-stop(52%, rgba(28,101,189,1)), color-stop(100%, rgba(39,163,230,1)));
+background: -webkit-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -o-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: -ms-linear-gradient(left, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+background: linear-gradient(to right, rgba(28,101,189,1) 0%, rgba(28,101,189,1) 52%, rgba(39,163,230,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c65bd', endColorstr='#27a3e6', GradientType=1 );
+width: 100%;margin: 0;padding: 0;
+}
+.main_text{padding-top: 20px;font-size: 30px;font-weight: bold;color: white;}
+.searcharea_input{width: 95%;height: 50px;background-color: rgba(0,0,0,0.8);border-radius:200px;margin-left:2.5%;padding-left:7px;padding-right: 7px;}
+#form_input{padding-top: 5px;}
+#input_main{background-color: transparent;border:none;color: white;padding: 0;}
+#locateme_button{background-color: transparent;color: white;border: 1px solid grey; border-radius: 50px;height: 30px;margin: 0;margin-top: 5px;
+font-size: 12px;padding: 2px;}
+#search_button{background-color: #FA5D03;border-radius: 50%;margin-right: 0;}
+.text_shuffle2{color: white;font-weight: bold;padding-top:10px;}
+.playstore_column{width: 50%;margin: 0;padding:0;}
+.appstore_column{width: 50%;margin: 0;padding: 0;}
+.input-group-btn{margin-left: 0%;}
+
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 14px; color: white;padding-left: 10px;
+}
+
+.form-control::-ms-input-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 12px;color: white;
+}
+.form-control::-moz-placeholder { /* Chrome/Opera/Safari */
+
+  font-size: 12px;color: white;
+}
+}
+
+
+

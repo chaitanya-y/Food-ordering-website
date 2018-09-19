@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://d2d3qesrx8xj6s.cloudfront.net/iframe/4no2R -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Passenger Number Input ( Popover Form + Spinner Input ) - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    .popover-markup .popover{
+  width:150%;
+}
+
+.popover-markup label{
+  padding:0px;
+}
+
+.container{
+    margin:0px auto;
+}
+    </style>
+    <script src="./jquery-1.11.1.min.js.download"></script>
+    <script src="./bootstrap.min.js.download"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+	<div class="container">
+    <h3>Passenger Number Input ( Popover Form + Spinner Input )</h3>
+    <p>Input form with sub inputs</p>
+	<div class="col-lg-3">
+		<div class="popover-markup"> 
+            <div class="trigger form-group form-group-lg form-group-icon-left" data-original-title="" title=""><i class="fa fa-users input-icon input-icon-highlight"></i>
+                <label>Passenger</label>
+                <input type="number" name="passengers" id="passengers" class="form-control" value="1" disabled="">
+            </div><div class="popover fade bottom in" style="top: 59px; left: -7px; display: block;"><div class="arrow"></div><h3 class="popover-title" style="display: none;"></h3><div class="popover-content">
+                <div class="form-group">
+                     <label class="control-label col-md-5"><strong>Adult</strong><br> <i> (above 17)</i></label>
+                     <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="adult" id="adult" class="form-control text-center" value="1" max="9" min="1">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                   <label class="control-label col-md-5"><strong>Child</strong><br> <i> (3 - 17)</i></label>
+                   <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="child" id="child" class="form-control text-center" value="0" max="9" min="0">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                   <label class="control-label col-md-5"><strong>Infant</strong><br> <i> (belove 2)</i></label>
+                   <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="infant" id="infant" class="form-control text-center" value="0" max="9" min="0">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <a class="btn btn-default btn-block demise">Select</a>
+            </div></div>
+            <div class="content hide">
+                <div class="form-group">
+                     <label class="control-label col-md-5"><strong>Adult</strong><br> <i> (above 17)</i></label>
+                     <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="adult" id="adult" class="form-control text-center" value="1" max="9" min="1">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                   <label class="control-label col-md-5"><strong>Child</strong><br> <i> (3 - 17)</i></label>
+                   <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="child" id="child" class="form-control text-center" value="0" max="9" min="0">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                   <label class="control-label col-md-5"><strong>Infant</strong><br> <i> (belove 2)</i></label>
+                   <div class="input-group number-spinner col-md-7">
+                        <span class="input-group-btn">
+                            <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                        </span>
+                        <input type="text" disabled="" name="infant" id="infant" class="form-control text-center" value="0" max="9" min="0">
+                        <span class="input-group-btn">
+                            <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+                        </span>
+                    </div>
+                </div>
+                <a class="btn btn-default btn-block demise">Select</a>
+            </div>
+        </div>
+	</div>
+</div>
+	<script type="text/javascript">
+	$(function () { 
+    var $popover = $('.popover-markup>.trigger').popover({
+      html: true,
+      placement: 'bottom',
+      // title: '<?= lang("Select passengers");?><a class="close demise");">×</a>',
+      content: function () {
+          return $(this).parent().find('.content').html();
+      }
+    });
+
+    // open popover & inital value in form
+    var passengers = [1,0,0];
+    $('.popover-markup>.trigger').click(function (e) {
+        e.stopPropagation();
+        $(".popover-content input").each(function(i) {
+            $(this).val(passengers[i]);
+        });
+    });
+    // close popover
+    $(document).click(function (e) {
+        if ($(e.target).is('.demise')) {        
+            $('.popover-markup>.trigger').popover('hide');
+        }
+    });
+// store form value when popover closed
+ $popover.on('hide.bs.popover', function () {
+    $(".popover-content input").each(function(i) {
+        passengers[i] = $(this).val();
+    });
+  });
+    // spinner(+-btn to change value) & total to parent input 
+    $(document).on('click', '.number-spinner a', function () {
+        var btn = $(this),
+        input = btn.closest('.number-spinner').find('input'),
+        total = $('#passengers').val(),
+        oldValue = input.val().trim();
+
+    if (btn.attr('data-dir') == 'up') {
+      if(oldValue < input.attr('max')){
+        oldValue++;
+        total++;
+      }
+    } else {
+      if (oldValue > input.attr('min')) {
+        oldValue--;
+        total--;
+      }
+    }
+    $('#passengers').val(total);
+    input.val(oldValue);
+  });
+  $(".popover-markup>.trigger").popover('show');
+});
+	</script>
+
+
+</body></html>

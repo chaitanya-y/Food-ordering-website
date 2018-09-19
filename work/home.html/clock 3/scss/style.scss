@@ -1,0 +1,453 @@
+@mixin center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin before-after{
+  display: block;
+  content:"";
+  position: absolute;
+}
+
+@mixin before-after-tick {
+  display: block;
+  content:"";
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: inherit;
+  box-shadow: inherit;
+  backface-visibility: inherit;
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; width: 100%;}
+
+body{
+  font-size: 100%;
+  font-family: helvetica;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f3f3f3;
+}
+
+$tick: #666;
+$sec: #ffd60b;
+$min-hour: #777;
+$logo-color: rgba(255,0,0,1);
+$watch-body: #aaa;
+
+
+// Delete later
+#image{
+  content:"";
+  background: url('http://www.hknebel.org/Uhren/assets/images/BraunAW21.jpg') center center no-repeat;
+  opacity: 0.7;
+  @include center;
+  top: 8px; // Delete later
+  left: 23px; // Delete later
+}
+
+#watch{
+  @include center;
+  width: 21.2em;
+  height: 21.2em;
+  border-radius: 50%;
+  // background: linear-gradient(0deg, rgba(220,220,220,1) 0%,rgba(255,255,255,1) 100%);
+  background: #fff;
+  border: 0.2em solid #d0d0d0;
+  box-shadow: 0 0 0 1.3em #e0e0e0;
+  
+  &:before{
+    @include before-after;
+    background: $watch-body;
+    height: 25em;
+    width: 16.2em;
+    z-index: -1;
+    left: 2.2em;
+    top: -2em;
+    box-shadow:
+      -7.5em -9.4em 0 -7.5em $watch-body,
+      7.5em -9.4em 0 -7.5em $watch-body,
+      -7.5em 9.4em 0 -7.5em $watch-body,
+      7.5em 9.4em 0 -7.5em $watch-body; 
+  }
+
+  // Band
+  &:after{
+    @include before-after;
+    height: 10em;
+    width: 13.8em;
+    background: #666;
+    top: -12.3em;
+    z-index:2;
+    left: 3.4em;
+    //border-radius: 0.7em 0.7em 0 0;
+    box-shadow: 0 35.6em 0 0 #666;
+  }
+  
+  // Hours
+  .hour{
+    @include center;
+    backface-visibility: hidden;
+    width: 0.15em;
+    height: 17em;
+    background: transparent;
+    box-shadow:
+      0 -1.6em 0 0 $tick,
+      0 1.6em 0 0 $tick;
+    transform: rotate(30deg);
+    
+    &:after,
+    &:before{
+      @include before-after-tick;
+    }
+    
+    &:before { transform: rotate(30deg); }
+    &:after  { transform: rotate(-30deg); }
+  
+    &:nth-of-type(1) { transform: rotate(-60deg);
+      &:after  { box-shadow: 0 -1.6em 0 0 $tick; }
+    }
+  }
+  
+  // Minutes
+  .min{
+    @include center;
+    backface-visibility: hidden;
+    width: 0.1em;
+    height: 19em;
+    background: transparent;
+    box-shadow:
+      0 -0.6em 0 0 $tick,
+      0 0.6em 0 0 $tick;
+    z-index:-1;
+    transform: rotate(-54deg);
+    
+    &:after,
+    &:before{
+      @include before-after-tick;
+      z-index:0;
+    }
+    
+    &:before { transform: rotate(6deg); }
+    &:after  { transform: rotate(12deg); }
+    
+    &:nth-child(2){ transform: rotate(-36deg); }
+    &:nth-child(3){ transform: rotate(-18deg); }
+    &:nth-child(4){ transform: rotate(6deg); }
+    &:nth-child(5){ transform: rotate(24deg); }
+  }
+}
+
+
+//
+// Second Hand
+//
+#sec{
+  @include center;
+  background: $tick;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.65em $sec;
+  // animation: rotation 60s infinite linear;
+  // transform: rotate(207deg);
+  z-index: 3;
+  //transition: transform 1s ease-in-out; 
+
+
+  &:before,
+  &:after{
+    @include before-after;
+  }
+  
+  &:before{
+    width: 0.15em;
+    height: 9em;
+    background: $sec;
+    left: 0;
+    right: 0;
+    top: -9em;
+    margin: 0 auto;
+    box-shadow: 0 0 0.3em 0 rgba(0,0,0,0.2);
+  }
+  &:after{
+    background: $sec;
+    width: 0.8em;
+    height: 1.7em;
+    top: 1em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 0 0 40% 40%;
+  }
+}
+
+//
+// Minute and Hour Hands
+//
+#min,
+#hour{
+  @include center;
+  background: $min-hour;
+  transform-origin: bottom center;
+  box-shadow: 0 0 0.3em 0 rgba(0,0,0,0.2);
+}
+#min{
+  z-index: 1;
+  //animation: rotation 3600s infinite linear;
+  width: 0.6em;
+  height: 9.6em;
+  top: -9.6em;
+  // transform: rotate(60deg);
+   //transition: transform 1.25s ease-in-out; 
+
+}
+
+#hour{
+  z-index: 2;
+  //animation: rotation 43200s infinite linear;
+  width: 0.7em;
+  height: 6.6em;
+  top: -6.6em;
+  // transform: rotate(306deg);
+  //transition: transform 1.5s ease-in-out; 
+}
+
+#date{
+  right: 1.4rem;
+  width: 3rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-top: 0.4rem solid #ccc;
+  border-right: 0.4rem solid #eee;
+  border-bottom: 0.4rem solid #ddd;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  padding: 0 0 0 0.4em;
+  text-indent: 0.1em;
+
+  &:before,
+  &:after{
+    @include before-after;
+    height: 1.24rem;
+    width: 0.6rem;
+    left: -0.2rem;
+    background: #db3523;
+  }
+  &:before{
+    top: -0.4rem;
+    transform: skew(30deg,0deg);
+  }
+  &:after{
+    bottom: -0.4rem;
+    transform: skew(-30deg,0deg);
+  }
+}
+
+#dial{
+  width: 0.9em;
+  height: 2em;
+  background: #d0d0d0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: -2.6em;
+  z-index: -1;
+  box-shadow:
+    -0.5em 0 0 -0.2em #aaa;}
+
+ol {
+  position: relative;
+  height: inherit;
+  width: inherit;
+  z-index: 0;
+  li {
+    counter-increment: customlistcounter;
+    font-size: 1.6rem;
+    display: inline-block;
+    position: absolute;
+    letter-spacing: -0.19em;
+    color: #444;
+    text-align: center;
+
+    &:before {
+      content: counter(customlistcounter) "";
+    }
+    
+    &:nth-child(1){
+      top: 1.8em;
+      right: 4.2em;
+    }
+    &:nth-child(11){
+      top: 1.8em;
+      left: 3.8em;
+    }
+    
+    &:nth-child(2){
+      top: 3.7em;
+      right: 2.4em;
+    }
+    &:nth-child(10){
+      top: 3.7em;
+      left: 1.8em;
+    }
+    
+    &:nth-child(3){
+      font-size: 0;
+    }
+    &:nth-child(9){
+      top: 5.9em;
+      left: 1.5em;
+    }
+    
+    &:nth-child(4){
+      top: 8.3em;
+      right: 2.4em;
+    }
+    &:nth-child(8){
+      top: 8.3em;
+      left: 2em;
+    }
+    
+    &:nth-child(5){
+      top: 10.1em;
+      right: 4.2em;
+    }
+    &:nth-child(7){
+      top: 10.1em;
+      left: 3.8em;
+    }
+    
+    &:nth-child(6){
+      bottom: 1.4em;
+      left: 6.22em;
+    }
+    &:nth-child(12){
+      top: 1.2em;
+      left: 6em;
+    }
+    
+  }
+}
+
+//
+// Braun Logo - 3 Elements
+//
+#logo{
+  position: absolute;
+  background: rgba(0,0,255,0.3);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 12em;
+
+  span{
+    position: absolute;
+
+    &:before,
+    &:after{
+      @include before-after;
+    }
+    
+    &:nth-child(1){
+      top: 1.9em;
+      left: 0;
+      width: 3em;
+      height: 3.2em;
+      border-radius: 0 50% 50% 0/0 43% 50% 0;
+      border: 1em solid $logo-color;
+      border-bottom-width: 0.8em;
+      
+      &:before{ 
+        left: -1em;
+        top: 1.5em;
+        width: 3em;
+        height: 3.4em;
+        border-radius: 0 50% 40% 0/0 43% 50% 0;
+        border: 1em solid $logo-color;
+        border-top-width: 0.9em;
+
+      }
+      &:after{ 
+        top: -1em;
+        left: 2.9em;
+        width: 3em;
+        height: 3.2em;
+        border-radius: 0 50% 50% 0/0 43% 50% 0;
+        border: 1em solid $logo-color;
+        border-bottom-width: 0.8em;
+      }
+    }
+    
+    &:nth-child(2){
+      top: 4.4em;
+      left: 3.9em;
+      width: 2.9em;
+      height: 3.4em;
+      border-radius: 0 50% 0 0/0 34% 0 0;  
+      border: 1em solid $logo-color;
+      border-bottom: 0;
+      border-top-width: 0.9em;
+
+      &:before{ 
+        height: 5.3em;
+        top: -5.3em;
+        left: 2.8em;
+        width: 3.2em;
+        border-radius: 50% 50% 0 0/30% 30% 0 0;
+        border: 1em solid $logo-color;
+      }
+      &:after{ 
+        width: 1.1em;
+        height: 2.5em;
+        background: $logo-color;
+        top: 0;
+        left: 2.8em;
+        box-shadow: 2.1em 0 0 0 $logo-color;
+      }
+    }
+    
+    &:nth-child(3){
+      height: 5.9em;
+      top: 2em;
+      left: 11.9em;
+      width: 2.9em;
+      border-radius: 0 0 48% 48%/0 0 20% 20%;
+      border: 1em solid $logo-color;
+      border-top: none;
+      position: absolute;
+    
+      &:after{
+        height: 6em;
+        top: -0.2em;
+        left: 2.8em;
+        width: 2.9em;
+        border-radius: 48% 48% 0 0/24% 24% 0 0;
+        border: 1em solid $logo-color;
+        border-bottom: none;
+        position: absolute;
+      }
+    }
+  }
+
+}
+

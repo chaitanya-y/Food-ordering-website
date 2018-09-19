@@ -1,0 +1,428 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 100%;
+  font-family: helvetica;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f3f3f3;
+}
+
+#image {
+  content: "";
+  background: url("http://www.hknebel.org/Uhren/assets/images/BraunAW21.jpg") center center no-repeat;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  top: 8px;
+  left: 23px;
+}
+
+#watch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 21.2em;
+  height: 21.2em;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.2em solid #d0d0d0;
+  box-shadow: 0 0 0 1.3em #e0e0e0;
+}
+#watch:before {
+  display: block;
+  content: "";
+  position: absolute;
+  background: #aaa;
+  height: 25em;
+  width: 16.2em;
+  z-index: -1;
+  left: 2.2em;
+  top: -2em;
+  box-shadow: -7.5em -9.4em 0 -7.5em #aaa, 7.5em -9.4em 0 -7.5em #aaa, -7.5em 9.4em 0 -7.5em #aaa, 7.5em 9.4em 0 -7.5em #aaa;
+}
+#watch:after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 10em;
+  width: 13.8em;
+  background: #666;
+  top: -12.3em;
+  z-index: 2;
+  left: 3.4em;
+  box-shadow: 0 35.6em 0 0 #666;
+}
+#watch .hour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  backface-visibility: hidden;
+  width: 0.15em;
+  height: 17em;
+  background: transparent;
+  box-shadow: 0 -1.6em 0 0 #666, 0 1.6em 0 0 #666;
+  transform: rotate(30deg);
+}
+#watch .hour:after, #watch .hour:before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: inherit;
+  box-shadow: inherit;
+  backface-visibility: inherit;
+}
+#watch .hour:before {
+  transform: rotate(30deg);
+}
+#watch .hour:after {
+  transform: rotate(-30deg);
+}
+#watch .hour:nth-of-type(1) {
+  transform: rotate(-60deg);
+}
+#watch .hour:nth-of-type(1):after {
+  box-shadow: 0 -1.6em 0 0 #666;
+}
+#watch .min {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  backface-visibility: hidden;
+  width: 0.1em;
+  height: 19em;
+  background: transparent;
+  box-shadow: 0 -0.6em 0 0 #666, 0 0.6em 0 0 #666;
+  z-index: -1;
+  transform: rotate(-54deg);
+}
+#watch .min:after, #watch .min:before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: inherit;
+  box-shadow: inherit;
+  backface-visibility: inherit;
+  z-index: 0;
+}
+#watch .min:before {
+  transform: rotate(6deg);
+}
+#watch .min:after {
+  transform: rotate(12deg);
+}
+#watch .min:nth-child(2) {
+  transform: rotate(-36deg);
+}
+#watch .min:nth-child(3) {
+  transform: rotate(-18deg);
+}
+#watch .min:nth-child(4) {
+  transform: rotate(6deg);
+}
+#watch .min:nth-child(5) {
+  transform: rotate(24deg);
+}
+
+#sec {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #666;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.65em #ffd60b;
+  z-index: 3;
+}
+#sec:before, #sec:after {
+  display: block;
+  content: "";
+  position: absolute;
+}
+#sec:before {
+  width: 0.15em;
+  height: 9em;
+  background: #ffd60b;
+  left: 0;
+  right: 0;
+  top: -9em;
+  margin: 0 auto;
+  box-shadow: 0 0 0.3em 0 rgba(0, 0, 0, 0.2);
+}
+#sec:after {
+  background: #ffd60b;
+  width: 0.8em;
+  height: 1.7em;
+  top: 1em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 0 0 40% 40%;
+}
+
+#min,
+#hour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #777;
+  transform-origin: bottom center;
+  box-shadow: 0 0 0.3em 0 rgba(0, 0, 0, 0.2);
+}
+
+#min {
+  z-index: 1;
+  width: 0.6em;
+  height: 9.6em;
+  top: -9.6em;
+}
+
+#hour {
+  z-index: 2;
+  width: 0.7em;
+  height: 6.6em;
+  top: -6.6em;
+}
+
+#date {
+  right: 1.4rem;
+  width: 3rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-top: 0.4rem solid #ccc;
+  border-right: 0.4rem solid #eee;
+  border-bottom: 0.4rem solid #ddd;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  padding: 0 0 0 0.4em;
+  text-indent: 0.1em;
+}
+#date:before, #date:after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 1.24rem;
+  width: 0.6rem;
+  left: -0.2rem;
+  background: #db3523;
+}
+#date:before {
+  top: -0.4rem;
+  transform: skew(30deg, 0deg);
+}
+#date:after {
+  bottom: -0.4rem;
+  transform: skew(-30deg, 0deg);
+}
+
+#dial {
+  width: 0.9em;
+  height: 2em;
+  background: #d0d0d0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: -2.6em;
+  z-index: -1;
+  box-shadow: -0.5em 0 0 -0.2em #aaa;
+}
+
+ol {
+  position: relative;
+  height: inherit;
+  width: inherit;
+  z-index: 0;
+}
+ol li {
+  counter-increment: customlistcounter;
+  font-size: 1.6rem;
+  display: inline-block;
+  position: absolute;
+  letter-spacing: -0.19em;
+  color: #444;
+  text-align: center;
+}
+ol li:before {
+  content: counter(customlistcounter) "";
+}
+ol li:nth-child(1) {
+  top: 1.8em;
+  right: 4.2em;
+}
+ol li:nth-child(11) {
+  top: 1.8em;
+  left: 3.8em;
+}
+ol li:nth-child(2) {
+  top: 3.7em;
+  right: 2.4em;
+}
+ol li:nth-child(10) {
+  top: 3.7em;
+  left: 1.8em;
+}
+ol li:nth-child(3) {
+  font-size: 0;
+}
+ol li:nth-child(9) {
+  top: 5.9em;
+  left: 1.5em;
+}
+ol li:nth-child(4) {
+  top: 8.3em;
+  right: 2.4em;
+}
+ol li:nth-child(8) {
+  top: 8.3em;
+  left: 2em;
+}
+ol li:nth-child(5) {
+  top: 10.1em;
+  right: 4.2em;
+}
+ol li:nth-child(7) {
+  top: 10.1em;
+  left: 3.8em;
+}
+ol li:nth-child(6) {
+  bottom: 1.4em;
+  left: 6.22em;
+}
+ol li:nth-child(12) {
+  top: 1.2em;
+  left: 6em;
+}
+
+#logo {
+  position: absolute;
+  background: rgba(0, 0, 255, 0.3);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 12em;
+}
+#logo span {
+  position: absolute;
+}
+#logo span:before, #logo span:after {
+  display: block;
+  content: "";
+  position: absolute;
+}
+#logo span:nth-child(1) {
+  top: 1.9em;
+  left: 0;
+  width: 3em;
+  height: 3.2em;
+  border-radius: 0 50% 50% 0/0 43% 50% 0;
+  border: 1em solid red;
+  border-bottom-width: 0.8em;
+}
+#logo span:nth-child(1):before {
+  left: -1em;
+  top: 1.5em;
+  width: 3em;
+  height: 3.4em;
+  border-radius: 0 50% 40% 0/0 43% 50% 0;
+  border: 1em solid red;
+  border-top-width: 0.9em;
+}
+#logo span:nth-child(1):after {
+  top: -1em;
+  left: 2.9em;
+  width: 3em;
+  height: 3.2em;
+  border-radius: 0 50% 50% 0/0 43% 50% 0;
+  border: 1em solid red;
+  border-bottom-width: 0.8em;
+}
+#logo span:nth-child(2) {
+  top: 4.4em;
+  left: 3.9em;
+  width: 2.9em;
+  height: 3.4em;
+  border-radius: 0 50% 0 0/0 34% 0 0;
+  border: 1em solid red;
+  border-bottom: 0;
+  border-top-width: 0.9em;
+}
+#logo span:nth-child(2):before {
+  height: 5.3em;
+  top: -5.3em;
+  left: 2.8em;
+  width: 3.2em;
+  border-radius: 50% 50% 0 0/30% 30% 0 0;
+  border: 1em solid red;
+}
+#logo span:nth-child(2):after {
+  width: 1.1em;
+  height: 2.5em;
+  background: red;
+  top: 0;
+  left: 2.8em;
+  box-shadow: 2.1em 0 0 0 red;
+}
+#logo span:nth-child(3) {
+  height: 5.9em;
+  top: 2em;
+  left: 11.9em;
+  width: 2.9em;
+  border-radius: 0 0 48% 48%/0 0 20% 20%;
+  border: 1em solid red;
+  border-top: none;
+  position: absolute;
+}
+#logo span:nth-child(3):after {
+  height: 6em;
+  top: -0.2em;
+  left: 2.8em;
+  width: 2.9em;
+  border-radius: 48% 48% 0 0/24% 24% 0 0;
+  border: 1em solid red;
+  border-bottom: none;
+  position: absolute;
+}
